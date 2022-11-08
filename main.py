@@ -30,16 +30,14 @@ BL = ds['line']     # Line rows
 BA = ds['actual']   # Actual rows
 errors = BA - BL
 
-
 meanError = np.mean(errors)
 stdError = np.std(errors)
 
-y = normalApprox = np.random.normal(meanError, stdError, 1000)
-xAxis = np.linspace(-20, 20, 100)
+normalApprox = np.random.normal(meanError, stdError, 1000)
 
 plt.hist(ds['line'], alpha=0.5, density=True, label='line')
 plt.hist(ds['actual'], alpha=0.5, density=True, label='actual')
-plt.hist(y, alpha=0.4, density=True, label='error diff')
+plt.hist(normalApprox, alpha=0.4, density=True, label='error diff')
 plt.legend()
 plt.grid()
 plt.show()
