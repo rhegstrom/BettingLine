@@ -61,12 +61,12 @@ bank = 0
 for i in range(len(BL)):
     n = BL[i] + BA[i]
     if n < 0:
-        lost = lost + 1
-        bank = bank - 11
+        lost += 1
+        bank -= 11
 #        print('You lost')
     if n > 0: 
-        win = win + 1
-        bank = bank + 10
+        win += 1
+        bank += 10
 #        print('You won..')
         
 print(f'[betting on home] wins = {win}, lost = {lost}, bank = {bank}')
